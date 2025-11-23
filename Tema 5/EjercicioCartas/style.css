@@ -1,0 +1,41 @@
+body{
+    background-color: #37C036;
+}
+
+h1
+{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    width: 100%;
+    color: white;
+    text-shadow: black;
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+#cartas
+{
+    margin-left: 27%;
+    width: 50%;
+    align-items: center;
+    display: grid;
+    grid-template-columns:repeat(6,1fr);
+
+}
+#cartas img:hover
+{
+    size: 100px;
+    transition: 1s;
+}
+
+#cartas img{
+    size: 80px;
+    transition: 1s;
+}
+
+p{
+    width: 100%;
+    text-align: center;
+    font-size: 100px;
+    color: burlywood;
+    text-shadow: brown 5px 1px 3px;
+}

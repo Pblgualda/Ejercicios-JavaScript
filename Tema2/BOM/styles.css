@@ -1,0 +1,14 @@
+
+div.contenedor{
+  border-style: solid;
+  background-color: darkgray;
+  border-radius: 10px;
+  padding-left: 6px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

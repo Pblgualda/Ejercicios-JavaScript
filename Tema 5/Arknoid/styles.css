@@ -1,0 +1,33 @@
+body {
+    background-color: cadetblue;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+}
+
+#bola {
+    background-color: #ff4b4b;
+    height: 20px;
+    width: 20px;
+    margin-top: 430px;
+    margin-left: 250px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+#barra {
+    background-color: black;
+    height: 10px;
+    width: 90px;
+    margin-top: 460px;
+    margin-left: 220px;
+    position: absolute;
+}
+
+.bloque {
+    background-color: #f0f0f0;
+    height: 10px;
+    width: 90px;
+    position: absolute;
+}

@@ -1,0 +1,19 @@
+body
+{
+    background-color: orange;
+    color: white;
+    align-items: center;
+    padding-left:20% ;
+}
+h1{
+    width: 100%;
+}
+#clock
+{
+    font-size: 50pt;
+}
+button{
+    width: 150px;
+    height: 50px;
+
+}
