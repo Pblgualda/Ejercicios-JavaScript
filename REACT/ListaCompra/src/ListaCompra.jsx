@@ -4,7 +4,22 @@ import Pie from './Pie.jsx';
 
 export default function ListaCompra()
 {
-    const [listaCompra,setListaCompra] = useState(["pan","azucar"]);
+
+
+    let datosInicialesPrueba = { "items":[
+        {
+            "nombre":"manzana",
+            "cantidad":"3"
+        },
+        {
+            "nombre":"pan",
+            "cantidad":"2"
+        }
+
+    ]
+
+    }
+    const [listaCompra,setListaCompra] = useState(datosInicialesPrueba.items);
     const [contenido,setContenido] = useState("");
 
     function pulsoBoton()
@@ -31,8 +46,8 @@ export default function ListaCompra()
         setListaCompra([]);
     }
 
-    let actualizado = listaCompra.map((item,indice)=> <Item key={indice}
-            nombre={item}
+    let actualizado = datosInicialesPrueba.map((item,indice)=> <Item key={indice}
+            nombre={item.nombre}
             id={indice}
             onNuevoTexto={actualizarElemento}
             onDelete={eliminarElemento}></Item>)

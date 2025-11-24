@@ -1,0 +1,14 @@
+{ "items":[
+    {
+        "nombre":"arroz",
+        "cantidad":3
+    },
+    {
+        "nombre":"pan",
+        "cantidad":2
+
+    }
+
+]
+
+}
