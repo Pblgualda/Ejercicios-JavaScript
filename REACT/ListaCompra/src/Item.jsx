@@ -1,15 +1,17 @@
 import { useState } from "react";
 
-export default function Item({nombre,cantidad,onNuevoTexto,id}){
+export default function Item({nombre,cantidad,onNuevoTexto,onDelete,id}){
     const [modoEdicion,setModoEdicion] = useState(false);
     const [nombreEditado,setNombreEditado] = useState(nombre);
     let jsxresultado;
     function entraEnEdicion(){
         setModoEdicion(true);
+        setNombreEditado(nombre);
     }
 
     function avisaGuardarCambios(){
         setModoEdicion(false);
+
         onNuevoTexto(nombreEditado,id);
     }
 
@@ -18,7 +20,8 @@ export default function Item({nombre,cantidad,onNuevoTexto,id}){
     }
 
     if(!modoEdicion){
-        jsxresultado = <li>{nombre} - {cantidad} <button onClick={entraEnEdicion}>Editar</button></li>
+        jsxresultado = <li>{nombre} - {cantidad} <button onClick={entraEnEdicion}>Editar</button><button onClick={() =>onDelete(id)}>Borrar Elemento</button></li>
+    
     }else
         jsxresultado = <li><input value={nombreEditado} onChange={e => setNombreEditado(e.target.value)}/>
         <button onClick={avisaGuardarCambios}>Guardar cambios</button>

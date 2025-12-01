@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Item from './Item.jsx';
 import Pie from './Pie.jsx';
 
-export default function ListaCompra()
+function ListaCompra()
 {
 
 
@@ -24,21 +24,22 @@ export default function ListaCompra()
 
     function pulsoBoton()
     {
-        setListaCompra([...listaCompra,contenido]);
+        setListaCompra([...listaCompra,{"nombre":contenido}]);
         setContenido("");
     }
 
     function actualizarElemento(nuevoContenido,id)
     {
         const nuevoArray = [...listaCompra];
-        nuevoArray[id] = nuevoContenido;
+        nuevoArray[id] = {"nombre":nuevoContenido};
         setListaCompra(nuevoArray);
     }
 
     function eliminarElemento(indice)
     {
-        const nuevoArray = [...listaCompra] 
-        elemento = listaCompra.splice(indice,1);
+        const nuevoArray = [...listaCompra];
+        nuevoArray.splice(indice,1);
+        setListaCompra(nuevoArray);
     }
 
     function borrarLista()
@@ -46,7 +47,7 @@ export default function ListaCompra()
         setListaCompra([]);
     }
 
-    let actualizado = datosInicialesPrueba.map((item,indice)=> <Item key={indice}
+    let maquetado = listaCompra.map((item,indice)=> <Item key={indice}
             nombre={item.nombre}
             id={indice}
             onNuevoTexto={actualizarElemento}
@@ -56,8 +57,10 @@ export default function ListaCompra()
         <>
             <input value={contenido} onChange={e => setContenido(e.target.value)}></input>
             <button onClick={pulsoBoton}>Añadir</button>
-            {actualizado}
+            {maquetado}
             <Pie onClick={borrarLista}></Pie>
         </>
     )
 }
+
+export default ListaCompra;

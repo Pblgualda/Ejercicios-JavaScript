@@ -1,114 +1,153 @@
-pelis = {
-  "Search": [
-    {
-      "Title": "Star Wars: Episode IV - A New Hope",
-      "Year": "1977",
-      "imdbID": "tt0076759",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BOGUwMDk0Y2MtNjBlNi00NmRiLTk2MWYtMGMyMDlhYmI4ZDBjXkEyXkFqcGc@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Star Wars: Episode V - The Empire Strikes Back",
-      "Year": "1980",
-      "imdbID": "tt0080684",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMTkxNGFlNDktZmJkNC00MDdhLTg0MTEtZjZiYWI3MGE5NWIwXkEyXkFqcGc@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Star Wars: Episode VI - Return of the Jedi",
-      "Year": "1983",
-      "imdbID": "tt0086190",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNWEwOTI0MmUtMGNmNy00ODViLTlkZDQtZTg1YmQ3MDgyNTUzXkEyXkFqcGc@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Star Wars: Episode VII - The Force Awakens",
-      "Year": "2015",
-      "imdbID": "tt2488496",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BOTAzODEzNDAzMl5BMl5BanBnXkFtZTgwMDU1MTgzNzE@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Star Wars: Episode I - The Phantom Menace",
-      "Year": "1999",
-      "imdbID": "tt0120915",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BODVhNGIxOGItYWNlMi00YTA0LWI3NTctZmQxZGUwZDEyZWI4XkEyXkFqcGc@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Star Wars: Episode III - Revenge of the Sith",
-      "Year": "2005",
-      "imdbID": "tt0121766",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNTc4MTc3NTQ5OF5BMl5BanBnXkFtZTcwOTg0NjI4NA@@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Star Wars: Episode II - Attack of the Clones",
-      "Year": "2002",
-      "imdbID": "tt0121765",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BNTgxMjY2YzUtZmVmNC00YjAwLWJlODMtNDBhNzllNzIzMjgxXkEyXkFqcGc@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Rogue One: A Star Wars Story",
-      "Year": "2016",
-      "imdbID": "tt3748528",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMjEwMzMxODIzOV5BMl5BanBnXkFtZTgwNzg3OTAzMDI@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Star Wars: Episode VIII - The Last Jedi",
-      "Year": "2017",
-      "imdbID": "tt2527336",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMjQ1MzcxNjg4N15BMl5BanBnXkFtZTgwNzgwMjY4MzI@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Star Trek",
-      "Year": "2009",
-      "imdbID": "tt0796366",
-      "Type": "movie",
-      "Poster": "https://m.media-amazon.com/images/M/MV5BMjE5NDQ5OTE4Ml5BMl5BanBnXkFtZTcwOTE3NDIzMw@@._V1_SX300.jpg"
+var peticionEnCurso;
+
+function maquetarPelis(peliculas)
+{
+    for(let peli of peliculas){
+      
+      var contenedor = document.getElementById("contenedor");
+      miDiv = document.createElement("div");
+      miDiv.addEventListener("click",(e)=>LanzaPeticionDetalle(peli.imdbID))       
+      texto = document.createElement("h2");
+      img = document.createElement("img");
+      
+      img.src = peli.Poster; 
+      texto.textContent = peli.Title;
+
+      miDiv.appendChild(img);
+      miDiv.appendChild(texto);
+      contenedor.appendChild(miDiv);
+
     }
-  ],
-  "totalResults": "4947",
-  "Response": "True"
-};
+}
 
-pelis2 = {"Search":[{"Title":"Star Wars: Episode IX - The Rise of Skywalker","Year":"2019","imdbID":"tt2527338","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BODg5ZTNmMTUtYThlNy00NjljLWE0MGUtYmQ1NDg4NWU5MjQ1XkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Star Trek Into Darkness","Year":"2013","imdbID":"tt1408101","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BMTk2NzczOTgxNF5BMl5BanBnXkFtZTcwODQ5ODczOQ@@._V1_SX300.jpg"},{"Title":"A Star Is Born","Year":"2018","imdbID":"tt1517451","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BNGUxZTc0NTAtNzQwMy00MmM2LTgzMGYtZWIyY2E1MGFjYmM5XkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Solo: A Star Wars Story","Year":"2018","imdbID":"tt3778644","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BOTM2NTI3NTc3Nl5BMl5BanBnXkFtZTgwNzM1OTQyNTM@._V1_SX300.jpg"},{"Title":"Star Trek Beyond","Year":"2016","imdbID":"tt2660888","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BN2FhNDI1YTYtNWI0OC00ZjYxLWJlYWEtN2ZiZjRmZDY1MWJjXkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Star Trek: The Next Generation","Year":"1987–1994","imdbID":"tt0092455","Type":"series","Poster":"https://m.media-amazon.com/images/M/MV5BMmNiNTQ2YzYtODBjYy00ZWMwLTlmNWMtYWE1NTQ2ZTYyZmMwXkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Star Trek: Discovery","Year":"2017–2024","imdbID":"tt5171438","Type":"series","Poster":"https://m.media-amazon.com/images/M/MV5BOTZkZTc1ZmYtYTA3Mi00MzZhLWFmZTItZTM2NThjYWJlZGU4XkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Star Wars: The Clone Wars","Year":"2008–2020","imdbID":"tt0458290","Type":"series","Poster":"https://m.media-amazon.com/images/M/MV5BOTdiODQ1MDYtZjM5My00MmQ5LTk1ZWUtZWIwYjBhZGMxZDAyXkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Star Trek: First Contact","Year":"1996","imdbID":"tt0117731","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BZjc0OWE1NDMtNjRmMi00ZDc2LWI2ZmQtNzEwNWU4Nzg4NDA5XkEyXkFqcGc@._V1_SX300.jpg"},{"Title":"Star Trek II: The Wrath of Khan","Year":"1982","imdbID":"tt0084726","Type":"movie","Poster":"https://m.media-amazon.com/images/M/MV5BOTFkZDY5NWQtMjY4Yy00OThiLTk3YjQtMDdhYTllMTI4MTdiXkEyXkFqcGc@._V1_SX300.jpg"}],"totalResults":"4947","Response":"True"};
+function maquetarDetalles(id)
+{
+      humo = document.createElement("section"); 
+      humo.id="humo";
+      miPeli = document.createElement("div");
+      //miPeli.addEventListener("click",(e)=>LanzaPeticionDetalle(peli.imdbID))       
+      titulo = document.createElement("h3");
+      img = document.createElement("img");
+      img.src = id.Poster; 
+      titulo.textContent = id.Title;
+      miPeli.id="detalles";
+      duracion = document.createElement("p");
+      duracion.textContent =
+      derecha = document.createElement("div");
+      derecha.id ="divDerecha";
+      ano = document.createElement("p");
+      miPeli.appendChild(img);
+      miPeli.appendChild(titulo);
+      derecha.appendChild(ano);
+      derecha.appendChild(duracion)
+      contenedor.appendChild(miPeli);
+      contenedor.appendChild(humo);
+}
 
- function cargarPelis(contenedor,array)
-        {
-          for(peli of array.Search)
-          {
-            miDiv = document.createElement("div");
-            miTitulo=document.createElement("h2");
-            myPortada=document.createElement("img");
-            miTitulo.textContent = peli.Title;
-            myPortada.src = peli.Poster;
-            
-            miDiv.appendChild(miTitulo);
-            miDiv.appendChild(myPortada);
+function LanzaPeticion(url){
 
-            contenedor.appendChild(miDiv)
-           
-          }
+    if(!peticionEnCurso)
+    {
+        peticionEnCurso=true;
+        fetch(url).then(response => response.json()).then(data => {
+        maquetarPelis(data.Search);
+        contador++;
+        peticionEnCurso=false;
+        
+    })
+}
+}
+
+function LanzaPeticionDetalle(id){
+   console.log(id);
+    fetch("https://www.omdbapi.com/?i="+id+"&apikey=8cadea28").then(response => response.json()).then(data => {
+        maquetarDetalles(data);
+        //contador++;
+    })
+}
+
+
+window.onload = () => 
+{
+    cat = document.getElementById("categoria");
+    botonInicio = document.getElementById("BotonInicio");
+    vistaB = document.getElementById("vistaBuscador");
+    vistaI = document.getElementById("PaginaInicio");
+    peticionEnCurso = false;
+    contenedor = document.getElementById("contenedor");
+    pelicula = document.getElementById("busqueda");
+    buscar = document.getElementById("btnBuscar");
+
+    botonInicio.addEventListener("click", () => {
+        vistaI.style.visibility = "hidden";
+        vistaB.style.visibility = "visible";
+    })
+
+
+    document.addEventListener("click", (e) =>{
+        if(e.target != miPeli)
+            {
+                miPeli.remove();
+                humo.remove();
+            }
+    })
+    buscar.addEventListener("click", ()  => {
+        peticionEnCurso=false;
+        contenedor.innerHTML = " ";
+        //contador = 2;
+        if(cat.value=="cualquiera"){
+            categoria = "";
+        }else if(cat.value == "pelicula"){
+            categoria = "&type=movie";
+        }else if(cat.value == "serie"){
+            categoria = "&type=series";
         }
-   
+        LanzaPeticion("https://www.omdbapi.com/?s="+pelicula.value+categoria+"&apikey=ea005db6&page=1");
+           
+    })
 
+    busqueda.addEventListener("keyup", ()  => {
+      peticionEnCurso=false;  
+      if(busqueda.value.length>=3)
+      {
+        contenedor.innerHTML = " ";
+        contador = 2;
+        contador = 2;
+        if(cat.value=="cualquiera"){
+            categoria = "";
+        }else if(cat.value == "pelicula"){
+            categoria = "&type=movie";
+        }else if(cat.value == "serie"){
+            categoria = "&type=series";
+        }
+        LanzaPeticion("https://www.omdbapi.com/?s="+pelicula.value+categoria+"&apikey=ea005db6&page=1");
+             
+      }
+      else
+        {
+            contenedor.innerHTML=" ";
+        }
+    })
+    
+
+}
+
+var contador = 2;
+
+window.onscroll = () =>{
+    let diferencia = (window.innerHeight + scrollY >= document.body.offsetHeight - 180);
+    console.log(diferencia);
+    if(diferencia)
+        {
+            LanzaPeticion("https://www.omdbapi.com/?s=" + pelicula.value +"&apikey=8cadea28&page="+contador);
+            //contador++;
+        }
+}
 
 
 window.onload = ()=>
-    {
-        cont = document.getElementById("contenedor");
-        var contadorPaginas = 2;
-        cargarPelis(cont,pelis);
-        document.getElementById("btnCargar").addEventListener("click", ()=>{
-          cargarPelis(cont,pelis2);
-        })
+{
+    var listaNotas = localStorage.getItem("listaNotas");
+    
 
-        fetch().then(response =>response.json())
-        
-
-       
-    }
+}

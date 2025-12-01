@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colores</title>
+    <title>Busqueda</title>
     <script src="index.js"></script>
     <style>
         body
@@ -14,50 +14,109 @@
             display: flex;
             flex-direction: column;
         }
-
-        button
-        {
-            background-color: antiquewhite;
-            color: black;
-            width: 60px;
-            border-radius: 30%;
-            border: black 1px ;
-            height: 80px;
-
-        }
         div
         {
-            width: 50%;
-            height: 50%;
-            padding: 50px;
-            border-radius: 10px;
+            width: 40vh;
+            height:60vh;
+            padding: 5vh;
+            border-radius: 10vh;
             border: solid 2px;
             display: flex;
-            flex-direction: column;
+            flex-direction:column;
             
         }
         div h2
         {
-            font-size: 15px;
+            font-size: 2vh;
             width: 100%;
         }
         div img
         {
-            width: 90%;
-            height: 90%;
+            width: 100%;
+            height: 95%;
         }
         #contenedor
         {
-            display: flex;
-            width: 100%;
+            padding: 10vh;
+            border: none;
+            display: grid;
+            grid-template-columns: 50vh 50vh 50vh;
         }
+        #detalles
+        {
+            width: 50%;
+            height: 50%;
+            position: fixed;
+            align-self: center;
+            background-color: blueviolet;
+            left: 20%;
+            opacity: 100%;
+            z-index: 5;
+        }
+
+        #detalles img
+        {
+            width: 30%;
+            height: 80%;
+        }
+
+        #PaginaInicio
+        {
+            position: fixed;
+            top: 50%;
+            left: 40%;
+            right: 50%;
+            bottom: 50%;
+            width: 50vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+    
+        }
+
+        #humo
+        {
+            top: 0vh;
+            opacity: 80%;
+            background-color: black;
+           position: fixed;
+           width: 100%;
+           height: 100%;
+           display: flex;
+           z-index: 4;
+        }
+
     </style>
 </head>
 <body>
-    <div id="contenedor">
-    </div>
+    <section id="vistaBuscador" style="visibility: hidden;">    
+        <header>
+            <nav>
+                <input id="busqueda" type="text" placeholder="Nombre">
+                <button id="btnBuscar">Buscar</button>
+                <select id="categoria">
+                    <option value="pelicula">Pelicula</option>
+                    <option value="serie">Serie</option>
+                </select>
+            </nav>
+        </header>
 
-    <button id="btnCargar">Hola carga</button>
-    
+        <div id="contenedor">
+            <!--Esta parte es en donde aparecen las pelis-->
+        </div>
+        </section>
+        <!---->
+        <section id="PaginaInicio">
+     
+            <h1>Buscar Pelis</h1>
+            <p>En esta pagina puedes buscar peliculas y ver sus detalles</p>
+            <button id="BotonInicio">Buscar</button>
+
+        </section>
+
+<footer>
+
+</footer>
 </body>
 </html>
